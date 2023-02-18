@@ -2,6 +2,9 @@
   "name": "nodejs-helloworld",
   "version": "1.0.0",
   "description": "Hello World!",
+  "scripts": {
+    "start": "node server.js"
+  },
   "main": "app.js",
   "author": "Red Hat Training",
   "license": "ASL",
