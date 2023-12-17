@@ -1,0 +1,17 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: nodejs-helloworld
+  namespace: app
+spec:
+  host: nodejs-helloworld-app.apps.sno.homelab.io
+  to:
+    kind: Service
+    name: nodejs-helloworld
+    weight: 100
+  port:
+    targetPort: 8080-tcp
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+  wildcardPolicy: None

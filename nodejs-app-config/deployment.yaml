@@ -1,0 +1,29 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: nodejs-helloworld
+  namespace: app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nodejs-helloworld
+  template:
+    metadata:
+      labels:
+        app: nodejs-helloworld
+        deployment: nodejs-helloworld
+    spec:
+      containers:
+        - name: nodejs-helloworld
+          image: image-registry.openshift-image-registry.svc:5000/app/nodejs-helloworld@sha256:102806a9a75fbcc935200a0252349b984a15ec40e2ea612ee6bf4139df0e85cf
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+            - containerPort: 8443
+              protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: Always
+      restartPolicy: Always
