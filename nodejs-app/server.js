@@ -1,7 +1,7 @@
 var express = require("express");
 app = express();
 
-let podIP = process.environment?.NODE_IP || "Unkown";
+let podIP = process.environment?.HOSTNAME || "Unkown";
 
 app.get("/", function (req, res) {
   res.send(`Hello World from pod: ${podIP}`);
