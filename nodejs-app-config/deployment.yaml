@@ -16,8 +16,7 @@ spec:
     spec:
       containers:
         - name: nodejs-helloworld
-          image: image-registry.openshift-image-registry.svc:5000/app/nodejs-helloworld@sha256:102806a9a75fbcc935200a0252349b984a15ec40e2ea612ee6bf4139df0e85cf
-          ports:
+          image: image-registry.openshift-image-registry.svc:5000/app/nodejs-app:latest
             - containerPort: 8080
               protocol: TCP
             - containerPort: 8443
