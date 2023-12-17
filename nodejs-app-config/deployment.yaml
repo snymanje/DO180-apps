@@ -17,6 +17,10 @@ spec:
       containers:
         - name: nodejs-helloworld
           image: image-registry.openshift-image-registry.svc:5000/app/nodejs-app:latest
+          env:
+            - name: NODE_IP
+              valueFrom:
+                fieldRef: status.hostIP
           ports:
             - containerPort: 8080
               protocol: TCP
