@@ -9,6 +9,7 @@
   "author": "Red Hat Training",
   "license": "ASL",
   "dependencies": {
-    "express": "4.x"
+    "express": "4.x",
+    "node-vault": "^0.10.2"
   }
 }
