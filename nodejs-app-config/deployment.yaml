@@ -4,7 +4,7 @@ metadata:
   name: nodejs-helloworld
   namespace: app
 spec:
-  replicas: 2
+  replicas: 4
   selector:
     matchLabels:
       app: nodejs-helloworld
